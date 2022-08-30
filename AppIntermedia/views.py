@@ -93,15 +93,12 @@ def buscar(request):
         Usuarios=Usuario.objects.filter(nombre__icontains=nombre)
 
         return render(request,"AppIntermedia/resultadoBusqueda.html", {"usuarios":Usuarios, "nombre":nombre})
-       
     else: 
-
         respuesta="No enviaste datos"
         return HttpResponse(respuesta)
 
 
 
-   
 """    if request.GET["nombre"]:
         name=request.GET.get("nombre")
         usuarios = Usuario.objects.filter(nombre=name)

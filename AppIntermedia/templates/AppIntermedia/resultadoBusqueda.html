@@ -4,18 +4,15 @@
 
 {% block titulo_de_pagina %}
 
-<h1 class="mb-5">Inicio de busqueda</h1>
+<h1 class="mb-5">Inicio de búsqueda</h1>
 
 {% endblock %}
 
 {% block contenido_que_cambia %}
 
-<p>Estas buscando: <strong>{{ nombre }}</strong></p>
+<p>Estás buscando: <strong>{{ nombre }}</strong></p>
 
 {% if Usuarios %}
-
-
-
 
 
 {% for Usuario in Usuarios %}
@@ -23,22 +20,17 @@
 <ul>
 <li>
 
-    {{Usuario.nombre}}
-
+{{Usuario.nombre}}
 
 </li>
-    {% endfor %}
-    
+</ul>
+
+{% endfor %}
+
 {% else %}
 
 <p>No hay nombres en la base de datos</p>
 
 {% endif %}
-
-</ul>
-
-
-
-
 
 {% endblock %}
