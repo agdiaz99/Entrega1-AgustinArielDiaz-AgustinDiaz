@@ -1,7 +1,7 @@
-# Entrega1-AgustinArielDiaz-AgustinDiaz
-Entrega intermedia de proyecto final 01/09:
+GitHub --> Entrega1-AgustinArielDiaz-AgustinDiaz
 
+Descripción: Entrega intermedia de proyecto final 01/09:
+
+Integrantes:
 - Diaz, Agustin Ariel
-- Diaz, Agustin
-
-1.
+- Diaz, Agustin Alejandro

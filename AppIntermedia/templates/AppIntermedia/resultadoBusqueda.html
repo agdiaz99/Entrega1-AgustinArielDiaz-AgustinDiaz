@@ -3,27 +3,42 @@
 {% load static %}
 
 {% block titulo_de_pagina %}
-<h1 class="mb-5">Este titulo viene de inicio</h1>
+
+<h1 class="mb-5">Inicio de busqueda</h1>
+
 {% endblock %}
 
 {% block contenido_que_cambia %}
 
-{% if mensaje %}
-<h2>{{ mensaje }}</h2>
+<p>Estas buscando: <strong>{{ nombre }}</strong></p>
 
+{% if Usuarios %}
+
+
+
+
+
+{% for Usuario in Usuarios %}
+
+<ul>
+<li>
+
+    {{Usuario.nombre}}
+
+
+</li>
+    {% endfor %}
+    
 {% else %}
 
-<h1>Resultados busqueda</h1>
-
-
-{% for usuarios in usuario %}
-
-<h2>{{ usuario.nombre }}</h2>
-<h2>{{ usuario.edad }}</h2>
---
-
-{% endfor %}
+<p>No hay nombres en la base de datos</p>
 
 {% endif %}
 
-{% endblock %} 
+</ul>
+
+
+
+
+
+{% endblock %}

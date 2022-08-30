@@ -5,34 +5,26 @@
 {% block titulo_de_pagina %}
 
 <h1 class="mb-5">Empleados</h1>
+
 {% endblock %}
 
 {% block contenido_que_cambia %}
 
-<h1>Formulario de Empleados</h1>    
+<h1>Formulario de empleados</h1>    
 
 <form action="{% url 'empleadoformulario' %}" method="POST">{% csrf_token %}
 
-    <table>
-    
-     {{ formulario.as_table }}
-    
-    </table>
-    
-    <input type="submit", value="Enviar">
-    
-    
-    
-    
-    
-    </form>
+<table>
 
-    <h2>{{ mensaje }}</h2>
-    
-    
-    
-    
-    
+{{ formulario.as_table }}
+
+</table>
+
+<input type="submit", value="Enviar">
+
+
+</form>
+
+<h2>{{ mensaje }}</h2>
+
 {% endblock %}
-
-

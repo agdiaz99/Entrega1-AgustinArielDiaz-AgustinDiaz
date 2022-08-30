@@ -1,0 +1,25 @@
+{% extends "AppIntermedia/padre.html" %}
+
+{% load static %}
+
+{% block titulo_de_pagina %}
+
+<h1 class="mb-5">Inicio</h1>
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h1>Búsqueda por nombre</h1>
+
+<form action="/AppIntermedia/resultadobusqueda/" method="GET"> {% csrf_token %}
+
+<input type="text" name="nombre", id="nombre"></p>
+
+<input type="submit", value="Buscar">
+
+</form>
+
+<h2></h2>
+
+{% endblock %} 

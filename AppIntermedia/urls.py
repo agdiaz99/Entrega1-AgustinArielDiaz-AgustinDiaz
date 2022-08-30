@@ -10,10 +10,6 @@ urlpatterns = [
     path('supervisorformulario/', supervisorFormulario, name="supervisorformulario"),
     path('empleadoformulario/', empleadoFormulario, name="empleadoformulario"),
     path('usuarioformulario/', usuarioFormulario, name="usuarioformulario"),
-    path('busquedanumero/', busquedaNumero, name="busquedanumero"),
-    path('resultadobusqueda/', busqueda, name="resultadobusqueda"),
-
-
-
-
+    path('busquedanombre/', busquedaNombre, name="busquedanombre"),
+    path('resultadobusqueda/', buscar, name="resultadobusqueda"),
 ]

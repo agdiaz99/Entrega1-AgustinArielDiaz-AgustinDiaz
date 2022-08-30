@@ -3,11 +3,12 @@
     <head>
 
         {% load static %}
+        
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
+        <title>Primer página web</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -21,12 +22,13 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="#!">PRIMER PÁGINA WEB</a>
                 <a class="btn btn-light" href="{% url 'inicio' %}">Inicio</a>
-                <a class="btn btn-light" href="{% url 'supervisorformulario' %}">Supervisor</a>
-                <a class="btn btn-light" href="{% url 'empleadoformulario' %}">Empleado</a>
-                <a class="btn btn-light" href="{% url 'usuarioformulario' %}">Usuario</a>
-                <a class="btn btn-light" href="#signup">Registrate!</a>       
+                <a class="btn btn-light" href="{% url 'busquedanombre' %}">Buscar</a>
+                <a class="btn btn-light" href="{% url 'supervisorformulario' %}">Supervisores</a>
+                <a class="btn btn-light" href="{% url 'empleadoformulario' %}">Empleados</a>
+                <a class="btn btn-light" href="{% url 'usuarioformulario' %}">Usuarios</a>
+                <a class="btn btn-light" href="#signup">Registrarse</a>       
                 
             </div>
         </nav>
@@ -37,7 +39,7 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            {% block titulo_de_pagina %}   {% endblock %}
+                            {% block titulo_de_pagina %}    {% endblock %}
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -50,11 +52,11 @@
                                 <!-- Email address input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+                                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email" data-sb-validations="required,email" />
+                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Se requiere una dirección email.</div>
+                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">La dirección email no es válida.</div>
                                     </div>
-                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button></div>
                                 </div>
                                 <!-- Submit success message-->
                                 <!---->
@@ -104,7 +106,7 @@
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                            <h3>Easy to Use</h3>
+                            <h3>Fácil de usar</h3>
                             <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
                         </div>
                     </div>
@@ -171,7 +173,7 @@
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
-                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+                        <h2 class="mb-4">¿Listo para comenzar? ¡Regístrese ahora!</h2>
                         <!-- Signup form-->
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
@@ -184,11 +186,11 @@
                             <!-- Email address input-->
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email" data-sb-validations="required,email" />
                                     <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
                                     <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
                                 </div>
-                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button></div>
                             </div>
                             <!-- Submit success message-->
                             <!---->
@@ -217,15 +219,15 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            <li class="list-inline-item"><a href="#!">Nosotros</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            <li class="list-inline-item"><a href="#!">Contacto</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                            <li class="list-inline-item"><a href="#!">Términos de uso y condiciones</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                            <li class="list-inline-item"><a href="#!">Política de privacidad</a></li>
                         </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Primer página web 2022. All Rights Reserved.</p>
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
