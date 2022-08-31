@@ -9,6 +9,9 @@ class Supervisor(models.Model):
     edad = models.IntegerField()
     ano_nacimiento = models.IntegerField()
 
+    def __str__(self):
+        return self.nombre+" "+str(self.apellido)
+
 
 class Empleado(models.Model):
     nombre = models.CharField(max_length=30)
@@ -16,9 +19,15 @@ class Empleado(models.Model):
     edad = models.IntegerField()
     ano_nacimiento = models.IntegerField()
 
+    def __str__(self):
+        return self.nombre+" "+str(self.apellido)
+
 
 class Usuario(models.Model):
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
     edad = models.IntegerField()
     ano_nacimiento = models.IntegerField()
+
+    def __str__(self):
+        return self.nombre+" "+str(self.apellido)

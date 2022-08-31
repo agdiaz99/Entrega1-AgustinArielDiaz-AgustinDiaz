@@ -2,34 +2,26 @@
 
 {% load static %}
 
+
 {% block titulo_de_pagina %}
-
-<h1 class="mb-5">Inicio de búsqueda</h1>
-
+<h1 class="mb-5">Búsqueda</h1>
 {% endblock %}
+
 
 {% block contenido_que_cambia %}
 
-<p>Estás buscando: <strong>{{ nombre }}</strong></p>
-
-{% if Usuarios %}
-
-
-{% for Usuario in Usuarios %}
-
-<ul>
-<li>
-
-{{Usuario.nombre}}
-
-</li>
-</ul>
-
-{% endfor %}
+{% if mensaje %}
+<h2>{{ mensaje }}</h2>
 
 {% else %}
 
-<p>No hay nombres en la base de datos</p>
+<h1>Resultado de búsqueda:</h1>
+
+{% for empleado in empleados %}
+
+<h4>{{ empleado.apellido }}, {{ empleado.nombre }}</h4>
+
+{% endfor %}
 
 {% endif %}
 

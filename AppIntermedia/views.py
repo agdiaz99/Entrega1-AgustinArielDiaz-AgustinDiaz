@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from .models import Supervisor, Empleado, Usuario
 from AppIntermedia.forms import FormularioSupervisor, FormularioEmpleado, FormularioUsuario
-from django.http import HttpResponse
-# Create your views here.
 
+# Create your views here.
 
 def inicio(request):
     return render(request, "AppIntermedia/inicio.html")
@@ -22,7 +21,6 @@ def empleado(request):
 
 
 def supervisorFormulario(request):
-
     if request.method == "POST":
         miformulario = FormularioSupervisor(request.POST)
         if miformulario.is_valid():
@@ -42,7 +40,6 @@ def supervisorFormulario(request):
 
 
 def empleadoFormulario(request):
-
     if request.method == "POST":
         miformulario = FormularioEmpleado(request.POST)
         if miformulario.is_valid():
@@ -62,7 +59,6 @@ def empleadoFormulario(request):
 
 
 def usuarioFormulario(request):
-
     if request.method == "POST":
         miformulario = FormularioUsuario(request.POST)
         if miformulario.is_valid():
@@ -80,26 +76,24 @@ def usuarioFormulario(request):
         miformulario = FormularioUsuario()
         return render(request, "AppIntermedia/usuarioFormulario.html", {"formulario": miformulario})
 
+###############################################################################################################
 
 def busquedaNombre(request):
     return render(request, "AppIntermedia/busquedaNombre.html")
 
-
-def buscar(request):  
-
+def buscarEmpleado(request):
     if request.GET["nombre"]:
-        #respuesta = f"Estoy buscando el nombre: {request.GET['nombre'] }"
-        nombre= request.GET["nombre"]
-        Usuarios=Usuario.objects.filter(nombre__icontains=nombre)
+        name=request.GET["nombre"]
+        datos=Empleado.objects.filter(nombre=name)
+        if len(datos)!=0:
+            return render(request, "AppIntermedia/resultadoBusqueda.html", {"empleados":datos})
+        else:
+            return render(request, "AppIntermedia/resultadoBusqueda.html", {"mensaje": "No hay resultados con ese nombre"})
+    else:
+        return render(request, "AppIntermedia/busquedaNombre.html", {"mensaje": "Por favor, ingrese una búsqueda"})
 
-        return render(request,"AppIntermedia/resultadoBusqueda.html", {"usuarios":Usuarios, "nombre":nombre})
-    else: 
-        respuesta="No enviaste datos"
-        return HttpResponse(respuesta)
-
-
-
-"""    if request.GET["nombre"]:
+# Método 1
+"""if request.GET["nombre"]:
         name=request.GET.get("nombre")
         usuarios = Usuario.objects.filter(nombre=name)
         if len(usuarios) !=0:
@@ -107,4 +101,14 @@ def buscar(request):
         else:
             return render(request, "AppIntermedia/resultadoBusqueda.html", {"mensaje":"No hay resultados"})
     else:
-        return render(request, "AppIntermedia/busquedaNombre.html", {"mensaje":"No enviaste datos"}) """
+        return render(request, "AppIntermedia/busquedaNombre.html", {"mensaje":"No enviaste datos"})"""
+
+# Método 2
+"""if "nombre" in request.GET:
+        #respuesta = f"Estoy buscando el nombre: {request.GET['nombre']}"
+        nombre=request.GET["nombre"]
+        usuarios=Usuario.objects.filter(nombre__icontains=nombre)
+        return render(request,"AppIntermedia/resultadoBusqueda.html", {"usuarios":nombre, "nombre":usuarios})
+    else: 
+        respuesta="No enviaste datos"
+        return HttpResponse(respuesta)"""

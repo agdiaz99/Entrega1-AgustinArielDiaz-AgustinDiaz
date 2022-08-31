@@ -12,7 +12,7 @@
 
 <h1>Búsqueda por nombre</h1>
 
-<form action="/AppIntermedia/resultadobusqueda/" method="GET"> {% csrf_token %}
+<form action="{% url 'buscarEmpleado' %}" method="GET"> {% csrf_token %}
 
 <input type="text" name="nombre", id="nombre"></p>
 
